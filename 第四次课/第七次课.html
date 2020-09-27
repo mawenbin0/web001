@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            background-color: red;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            left: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1" class="boxclass">
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div>
+        <input type="button" id="btn1" value="移动">
+    </div>
+    <script>
+        var targer = document.getElementById("btn1");
+        targer.onclick = function(){
+            var box1 = document.getElementById("box1").style.top;
+            var box2 = document.getElementById("box1").style.left;
+            box1 = box1.replace("px", "");
+            box2 = box2.replace("px", "");
+            box1 = Number(box1) + 5;
+            box2 = Number(box1) + 1;
+            document.getElementById("box1").style.top = box1 + "px";
+            document.getElementById("box1").style.left = box2 + "px";
+        }
+    </script>
+</body>
+
+</html>
