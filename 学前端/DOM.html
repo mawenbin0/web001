@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementById</title>
+    <script>
+        function showContent() {
+            var myDiv, txtName, content;
+            with (document) {
+                myDiv = getElementById("myDiv");
+                txtName = getElementById("txtName");
+                   content = getElementById("content");
+            }
+            alert(myDiv.innerHTML+"\n"+content.value+"\n"+txtName.value);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="myDiv">我的div块</div>
+    <textarea id="content" cols="30" rows="15">好好学习，天天向上</textarea><br/>
+    <input type="text" id="txtName" value="chenhao" /><br/>
+    <input type="button" id="btn_show" value="访问3个元素的内容" onclick="showContent()" />
+</body>
+
+</html>

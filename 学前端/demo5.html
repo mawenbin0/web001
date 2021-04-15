@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="name">
+        <input type="text" v-model="user.id">
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                name: "aaa",
+                user:{
+                    id:001
+                }
+            },
+            watch:{
+               /*  name:function(oldValue,newValue){
+                    console.log("修改前："+newValue+"修改后："+oldValue);
+                },
+                "user.id": function(oldValue,newValue){
+                    console.log("前:"+oldValue.id+"后："+newValue.id);
+                } */
+                user:{
+                    handler:function(newValue,oldValue){
+                        console.log("修改前"+oldValue.id+"修改后"+newValue.id);
+                    },
+                    deep:true //深度监听
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

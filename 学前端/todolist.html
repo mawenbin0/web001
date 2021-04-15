@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./index.css">
+    <!-- 引入组件库 -->
+    <script src="./index.js"></script>
+    <style>
+        #main {
+            width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <el-container>
+            <el-header>
+                <div id="header">
+                    江西软件职业技术大学
+                </div>
+            </el-header>
+            <el-main>
+                <div id="main">
+                    <el-input placeholder="请输入代办事项内容" v-model="content" @keyup.enter.native="add">
+                        <el-button type="primary" slot="append" @click="addItem">增加事项</el-button>
+                    </el-input>
+                    <hr>
+                    <el-tabs v-model="activeName" @tab-click="handleClick">
+                        <el-tab-pane label="待办任务" name="first">
+                            <li type="none" v-for="(value,index) in lists" ::key="index" v-show="!value.finished">
+                                <el-checkbox v-model="value.finished" @click="changeValue(value)">
+                                    {{value.name}}
+                                </el-checkbox>
+                            </li>
+                        </el-tab-pane>
+                        <el-tab-pane label="已办任务" name="second">
+                            <li type="none" v-for="(value,index) in lists" ::key="index" v-show="value.finished">
+                                <el-checkbox v-model="value.finished" @click="changeValue(value)">
+                                    {{value.name}}
+                                </el-checkbox>
+                            </li>
+                        </el-tab-pane>
+                        <el-tab-pane label="全部任务" name="third">
+                            <li type="none" v-for="(value,index) in lists" ::key="index">
+                                <el-checkbox>
+                                    {{value.name}}
+                                </el-checkbox>
+                            </li>
+                        </el-tab-pane>
+                    </el-tabs>
+                </div>
+            </el-main>
+        </el-container>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                content: '',
+                activeName: "first",
+                lists: [
+                    {
+                        name: "我在学java",
+                        finished: false
+                    },
+                    {
+                        name: "我在学习C语言",
+                        finished: false
+                    },
+                    {
+                        name: "我在学习操作系统",
+                        finished: false
+                    },
+                    {
+                        name: "我在学习计算机网络",
+                        finished: true
+                    }
+                ]
+            },
+            methods: {
+                changeValue(value) {
+                    value.finished = !value.finished
+                },
+                handleClick() { },
+                add() {
+                    this.addItem()
+                },
+                addItem() {
+                    if (this.content.length > 0) {
+                        this.lists.push({
+                            name: this.content,
+                            finished: false
+                        });
+
+                        this.content = "";
+                    }
+                }
+
+            },
+        })
+    </script>
+</body>
+
+</html>

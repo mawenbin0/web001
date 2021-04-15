@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+      /* function show(){
+        return function(){
+            alert("chenhao");
+        };
+      }
+      var f =show();
+      f(); */
+
+     /*  var name="chenhao";
+      function show(){
+          var name="zhangsan"
+          var age=10;
+          alert(name+"--"+age);
+      }
+      alert(name);
+      alert(age);
+      show(); */
+
+    /*   function f1(){
+          var name="chenhao";
+          function f2(){
+              var age=30;
+              alert(name);
+          }
+         // alert(age)错误的
+          f2();
+      }
+      f1(); */
+
+      function f3(){
+          var n=1;
+          function f4(){
+              alert(n);
+          }
+          return f4;
+      }
+     var f = f3();
+     f();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

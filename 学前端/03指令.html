@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p v-if="show1">你看的见</p>
+        <p v-if="hidden1">你看不见</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                show1: true,
+                hide1: false
+            }
+        })
+    </script>
+</body>
+
+</html>

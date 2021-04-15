@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js"></script>
+    <style>
+        body {
+            background-image: url("hupo.jpeg");
+        }
+    </style>
+</head>
+
+<body>
+    <div id="test">
+        <div id="header">
+            {{message}}
+            <br>
+            {{new Date()}}
+            {{message.length>1? "Good":"Bad"}}
+            <br>
+            {{message.split('').reverse().join('')}}
+        </div>
+        <hr>
+        <div id="wrapper">
+            <li type="none" v-for="(value,index) in lists" ::key="index" v-show="value.score>60">
+                {{value.name}}:{{value.score}}</li>
+            <hr>
+        <div v-html="htmlContent">
+            
+        </div>
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#test",
+            data: {
+                htmlContent:"<div style='background:red'>htmlContent</div>",
+                message: "江西软件大学 软件专业课程",
+                lists: [
+                    { name: "操作系统", score: 98 },
+                    { name: "计算机组成原理", score: 97 },
+                    { name: "计算机网络", score: 96 },
+                    { name: "数据结构和算法", score: 95 },
+                    { name: "前端框架", score: 58 },
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

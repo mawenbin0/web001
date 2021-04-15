@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="rev()">点我你就睡了</button>
+        <input type="text" v-on:keyup.enter="enter"/>
+        <button  @click.right="rev1">点击爆炸</button>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+
+            },
+            methods:{
+                rev(){
+                    alert("11111")
+                },
+                enter:function(){
+                    alert('弹了')
+                },
+                rev1:function(){
+                    console.log('炸了！！！')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

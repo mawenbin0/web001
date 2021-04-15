@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>childNodes属性</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+        window.onload = function () {
+            elementSum = 0;
+            textSum = 0;
+            var oUl = document.getElementById("ul");
+            var span1 = doucument.getElementById("span1");
+            var span2 = document.getElementById("span2");
+            var span3 = document.getElementById("span3");
+            for (var i = 0; i < oUl.childNodes.length; i++) {
+                span2.innerHTML += oUl.childNodes[i].nodeType + "-";
+                switch (oUl.childNodes[i].nodeType) {
+                    case 1: elementSum++;
+                        break;
+                    case 3: textSum++;
+                }
+            }
+            span.innerHTML = oUl.childNodes.length;
+            span2.innerHTML = elementSum;
+            span3.innerHTML = textSum;
+        }
+    </script>
+</head>
+
+<body>
+    <ul id="ul">
+        <li>音乐 </li>
+        <li>足球</li>
+        羽毛球
+    </ul>
+    childNodes显示的节点数:<span id="span1"></span><br>
+    其中:<br>
+    元素类型的节点数是：<span id="span2"></span><br>
+    文本类型的节点数是：<span id="span3"></span>
+    <br/>
+</body>
+
+</html>

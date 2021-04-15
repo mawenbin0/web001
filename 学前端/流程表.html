@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./index.css">
+    <!-- 引入组件库 -->
+    <script src="./index.js"></script>
+    <style>
+        .el-carousel__item h3 {
+          color: #eb9411;
+          font-size: 14px;
+          opacity: 0.75;
+          line-height: 150px;
+          margin: 0;
+        }
+      
+        .el-carousel__item:nth-child(2n) {
+           background-color: #4c06f1;
+        }
+        
+        .el-carousel__item:nth-child(2n+1) {
+           background-color: #e40b16;
+        }
+      </style>
+</head>
+<body>
+    <div class="block">
+        <span class="demonstration">默认 Hover 指示器触发</span>
+        <el-carousel height="150px">
+          <el-carousel-item v-for="item in 4" :key="item">
+            <h3 class="small">{{ item }}</h3>
+          </el-carousel-item>
+        </el-carousel>
+      </div>
+      <div class="block">
+        <span class="demonstration">Click 指示器触发</span>
+        <el-carousel trigger="click" height="150px">
+          <el-carousel-item v-for="item in 4" :key="item">
+            <h3 class="small">{{ item }}</h3>
+          </el-carousel-item>
+        </el-carousel>
+      </div>
+      <script>
+          var vm=new Vue({
+              el:".block",
+              data:{     
+                   
+              }
+          })
+      </script>
+</body>
+</html>

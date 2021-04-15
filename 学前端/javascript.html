@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script >
+        function show(sText) {
+            var oDiv = document.getElementById("display");
+            oDiv.innerHTML += sText;
+        }
+        window.onload = function () {
+            var mybody = document.getElementById("mbody");
+            var mydiv = document.getElementById("mdiv");
+            var myp = document.getElementById("mp");
+            mybody.addEventListener("click",function(){show('body<br>')},false);
+            mydiv.addEventListener("click",function(){show('div<br>')},false);
+            myp.addEventListener("click",function(){show('p<br>')},false);
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+
+        <body id="mbody">
+            <div id="mdiv">
+                <p id="mp">click me</p>
+            </div>
+            <div id="display"></div>
+        </body>
+
+</html>

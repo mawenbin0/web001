@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        body{
+            background-image: url("yasuo.jpeg");
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <table border="1" align="center" width="600px" height="380px">
+            <caption><h2>学生信息表</h2></caption>
+            <tr>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>年龄</td>
+            </tr>
+            <tr align="center" v-for="(user) in listObj">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var vm= new Vue({
+            el:"#app",
+            data:{
+                listObj:[
+                    {id:1,name:'刘兵',age:25},
+                    {id:2,name:'王琼',age:20},
+                    {id:3,name:'张三',age:18},
+                    {id:4,name:'李二',age:26},
+                    {id:5,name:'王八蛋',age:23},
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

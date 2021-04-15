@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(name,age){
+            alert("名字:"+name+",年龄"+age);
+        }
+        show("张三",40);
+
+        (function (name,age){
+            alert("名字:"+name+",年龄"+age);
+        })("李四",50)
+
+        var f=function (name,age){
+            alert("名字:"+name+",年龄"+age);
+        }
+        f("王五",60)
+    </script>
+</head>
+<body>
+    
+</body>
+</html> 

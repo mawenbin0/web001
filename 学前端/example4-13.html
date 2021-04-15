@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边框样式</title>
+    <style>
+        #box {
+            width: 600px;
+
+        }
+
+        #box div {
+            float: left;
+            margin: 50px;
+        }
+
+        /*  正方形 */
+        .square {
+            width: 100px;
+            height: 100px;
+            background: rgb(76, 0, 255);
+        }
+
+        /*  矩形 */
+        .rectangle {
+            width: 200px;
+            height: 100px;
+            background: rgb(255, 0, 0);
+        }
+
+        /*  梯形 */
+        .trapezoid {
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid rgb(21, 221, 128);
+            height: 0;
+            width: 100px;
+            background: #fff;
+        }
+
+        /*  平行四边形 */
+        .parallelogram {
+            width: 150px;
+            height: 100px;
+            transform: skew(-20deg);
+            margin-left: 20px;
+            background: rgb(255, 0, 157);
+        }
+
+        /* 三角形 */
+        .triangle-up {
+            width: 0px;
+            height: 0px;
+            transform: skew(26deg);
+            border-left: 100px solid transparent;
+            border-right: 100px soild transparent;
+            border-bottom: 100px solid rgb(160, 10, 135);
+
+        }
+
+        /* 空心圆 */
+        .circle-circle {
+            width: 80px;
+            height: 80px;
+            border: 15px solid rgb(245, 81, 5);
+            background: rgb(250, 252, 251);
+            border-radius: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="square"></div>
+        <div class="rectangle"></div>
+        <div class="trapezoid"></div>
+        <div class="parallelogram"></div>
+        <div class="triangle-up"></div>
+        <div class="circle-circle"></div>
+    </div>
+</body>
+
+</html>

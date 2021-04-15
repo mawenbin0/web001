@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-for="cp in chanpins">
+            名字： {{cp.name}}
+            <br>
+            年龄：{{cp.age}}
+            <br>
+            性别： {{cp.sex}}
+            <br>
+            电话： {{cp.phone}}
+            <hr>
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                chanpins:
+                    [
+                        { name: "zhangsan", age: "18", sex: "nan", phone: "13838384438" },
+                        { name: "greenlis", age: "19", sex: "nan", phone: "15656554438" },
+                        { name: "jjwanger", age: "16", sex: "nan", phone: "19938389938" },
+                    ]
+
+            }
+        })
+    </script>
+</body>
+
+</html>

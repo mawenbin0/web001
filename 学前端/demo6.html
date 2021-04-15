@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <script src="./vue-router.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <router-link to="/home">主页</router-link>
+        <router-link to="/user">用户页面</router-link>
+        <div>
+            <router-view></router-view>
+        </div>
+    </div>
+    <template id="user">
+        <div>
+            <h3>用户信息</h3>
+            <div>
+                <router-link to="/user/login?name=tom&age=15">用户注册</router-link>
+                <router-link to="/user/reg/jack/22">用户登录</router-link>
+            </div>
+            <div>
+                <router-view></router-view>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        var home = {
+            template: "<h1>我是主页</h1>"
+        }
+        var user = {
+            template: "#user"
+        }
+        var login = {
+            template: "<div><h2>用户登录</h2>{{$route.query.name}}{{$route.query.age}}</div>"
+        }
+        var reg = {
+            template: "<div><h2>用户注册<h2>{{$route.params.name}}{{$route.params.age}}</div>"
+        }
+        var routes = [
+            { path: "/home", component: home },
+            {
+                path: "/user", component: user,
+                children: [
+                    { path: "login", component: login },
+                    { path: "reg/:name/:age", component: reg }
+                ]
+            }
+        ]
+        var router = new VueRouter({
+            routes
+        })
+        new Vue({
+            el: "#app",
+            router
+        })
+    </script>
+</body>
+
+</html>

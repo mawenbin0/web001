@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="yasuo.jpeg" alt="yasuo">
+    <div id="app">
+        <select>
+            <option>苹果</option>
+            <option>香蕉</option>
+            <option>栗子</option>
+            <option>西瓜</option>
+            <option>草莓</option>
+        </select>
+        <p>你选中的水果是：{{message}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: ""
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="msg">
+        <div v-ruanmou>{{msg}}</div>
+    </div>
+    <script>
+        Vue.directive("ruanmou", {
+            bind(el, binding) {
+                el.style.color = "#f00";
+                console.log(binding);
+            },
+            inserted(){
+                console.log("被绑定自定义指令的元素插入到其父节点的时候调用");
+            },
+            update(){
+              console.log("被绑定")
+            },
+            unbind(){
+
+            }
+        });
+       /*  Vue.directive("ruanmou",function(el,binding){
+
+        }); */
+        var vm = new Vue({
+            el: "#app",
+            data:{
+                msg:"hello world"
+            }
+        });
+    </script>
+</body>
+
+</html>

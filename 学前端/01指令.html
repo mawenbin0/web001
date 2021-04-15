@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>在输入框中尝试输入：</p>
+        <p>姓名：<input type="text" v-model="username"></p>
+        <p>你输入的为：{{username}}</p>
+        <h2 v-text="message">{{message}} </h2>
+        <h1 v-html="mate">{{mate}}</h1>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                username:"",
+                message:"<b>今天下雨了</b>",
+                mate:"<b>今天天晴</b>"
+            }
+        })
+    </script>
+</body>
+</html>

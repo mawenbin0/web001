@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* function Student(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        var s1=new Student("haoge",20);
+        document.write(s1.name+"--"+s1.age)
+
+        function student(name,age){
+            this.name=name;
+            this.age=age;
+            student.gender="male"
+            this.info=function(){
+                document.write("名字："+this.name+"，年龄："+this.age+",性别："+student.gender);
+            }
+        }
+        var s2=new student("zhangsan",30);
+        s2.info(); */
+
+        var student1 = new Object();
+        student1.name = "lisi";
+        student1.age = 30;
+        function abc() {
+            document.write("名字" + this.name + "，年龄:" + this.age);
+        }
+        student1.info = abc;
+        student.info();
+
+        var person = {
+            "name": zhangsan,
+            "age": 30,
+            "son": [
+                {
+                    "name": "jack",
+                    "age": 2
+                },
+                {
+                    "name": "rose",
+                    "age": 5
+                }
+            ],
+            "info": function () {
+                document.write("父亲名字:" + this.name + "，年龄:" + this.age + "<br/>");
+                for (var child in this.son) {
+                    document.write("儿子名字:" + this.son[child].name + "，年龄:" + this.son[child].age + "<br/>");
+                }
+            }
+        };
+        person.info();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
